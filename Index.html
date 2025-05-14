@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Flash Game</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #canvas {
+      width: 800px;
+      height: 600px;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <script src="waflash.js"></script>
+  <script>
+    WAFlashPlayer.load("mygame.swf", {
+      canvas: document.getElementById("canvas"),
+      onprogress: (progress) => {
+        console.log("Loading progress:", progress);
+      }
+    });
+  </script>
+</body>
+</html>
